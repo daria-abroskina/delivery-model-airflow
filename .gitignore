@@ -10,10 +10,8 @@ plugins/
 !plugins/.gitkeep
 
 __pycache__/
-.env
 .venv
 venv/
-env/
 
 
 #IDE 
