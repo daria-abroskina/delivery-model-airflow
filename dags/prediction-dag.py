@@ -176,24 +176,24 @@ with DAG(
         python_callable=preprocess
     )
 
+    prediction_task = PythonOperator(
+            task_id = 'prediction',
+            python_callable=prediction
+        )
+
     check_data_drift = PythonOperator(
         task_id = 'check_data_drift',
         python_callable = data_drift
     )
 
     
-    prediction_task = PythonOperator(
-        task_id = 'prediction',
-        python_callable=prediction
-    )
-
 
     fill_db_task = PythonOperator(
         task_id = "load_prediction_to_db",
         python_callable=load_predictions_to_db
     )
 
-load_task >> preprocess_task >> check_data_drift >> prediction_task >> fill_db_task
+load_task >> preprocess_task >> prediction_task  >> check_data_drift >> fill_db_task
 
     
 
