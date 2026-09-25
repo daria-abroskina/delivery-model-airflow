@@ -21,6 +21,7 @@ Airflow будет доступен по адресу http://localhost:8080
 - Connection Type: Postgres
 - Host: my-postgres-db
 - Login: my_user
+- Password: my_password
 - Port: 5432
 - Database: my_forecast_db
 
